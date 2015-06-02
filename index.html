@@ -3,8 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="css/estilos.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/controller/background.js"></script>
+	<script src="js/controller/palavra.js"></script>
+	<script src="js/controller/tecla.js"></script>
 </head>
-<body>
+<body ng-app="forcaApp">
+
+	<div ng-controller="BackgroundController" id="background">
+		
+	</div>
+
+	<div ng-controller="PalavraController" id="palavra" >
+		
+	</div>
 	
+	<div ng-controller="TeclaController" id="teclas" class="teste">
+		<span class="letra" ng-repeat="letra in letras" >{{letra}}</span>
+	</div>
+
 </body>
 </html>
