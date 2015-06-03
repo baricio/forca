@@ -20,6 +20,11 @@
 	float: left;
 }
 
+#palavra .item{
+	padding: 5px;
+	margin: 5px;
+	border-bottom: 1px solid blue;	
+}
 
 #teclas{
 
@@ -31,6 +36,7 @@
 
 #teclas .letra{
 
+	cursor: pointer;
 	padding: 5px;
 	margin: 5px;
 	border: black;

@@ -17,11 +17,11 @@
 	</div>
 
 	<div ng-controller="PalavraController" id="palavra" >
-		
+		<span class="item" ng-repeat="caracter in palavra_secreta track by $index"  key="{{caracter}}"></span>
 	</div>
 	
 	<div ng-controller="TeclaController" id="teclas" class="teste">
-		<span class="letra" ng-repeat="letra in letras" >{{letra}}</span>
+		<span class="letra" ng-click="checaLetra(letra)" ng-repeat="letra in letras" >{{letra}}</span>
 	</div>
 
 </body>
