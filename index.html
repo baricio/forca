@@ -7,11 +7,17 @@
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/index.js"></script>
+	<script src="js/service/pontos.js"></script>
+	<script src="js/controller/ponto.js"></script>
 	<script src="js/controller/background.js"></script>
 	<script src="js/controller/palavra.js"></script>
 	<script src="js/controller/tecla.js"></script>
 </head>
 <body ng-app="forcaApp">
+
+	<div ng-controller="PontoController" id="barra">
+		<span>Chances: {{chances}}</span>
+	</div>
 
 	<div ng-controller="BackgroundController" id="background">
 		
@@ -22,7 +28,7 @@
 	</div>
 	
 	<div ng-controller="TeclaController" id="teclas" >
-		<span class="letra" ng-click="checaLetra(letra)" ng-repeat="letra in letras" >{{letra}}</span>
+		<span letra="{{letra}}" class="letra" ng-click="checaLetra(letra)" ng-repeat="letra in letras" >{{letra}}</span>
 	</div>
 
 </body>
