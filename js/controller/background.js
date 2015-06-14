@@ -10,7 +10,7 @@ forcaApp.controller('BackgroundController', ['$scope', function($scope) {
   	};
 
  	$scope.$on('desenha', function(event, args) {		
-		imageObj.src = '/../../scenes/1/' + startScene + '.png';
+		imageObj.src = 'scenes/1/' + startScene + '.png';
 		startScene = startScene + 1;
 	});
 
