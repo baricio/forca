@@ -1,7 +1,9 @@
 forcaApp.controller('PalavraController', ['$scope', function($scope) {
  
-	var chars = "PALAVRA".split('');
+ 	var id_palavra = Math.floor(Math.random() * lista_palavras.length);
+	var chars = lista_palavras[id_palavra].palavra.toUpperCase().split('');
 	
+	$scope.dica = lista_palavras[id_palavra].dica;
 	$scope.palavra_secreta = chars;
 
 	$scope.$on('encontraPalavra', function(event, args) {
