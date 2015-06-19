@@ -1,3 +1,14 @@
+@font-face {
+	font-family:Text;
+	src:url(../fonts/AniBeatriceCursive.ttf);
+}
+
+body{
+	background-image: url('../images/notebook_paper.jpg');
+	font-family: Text;
+	font-size: 26px;
+}
+
 .teste{
 	border: red;
 	border-style: solid;
