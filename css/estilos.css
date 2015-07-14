@@ -3,6 +3,11 @@
 	src:url(../fonts/AniBeatriceCursive.ttf);
 }
 
+@font-face {
+	font-family:Teclas;
+	src:url(../fonts/SemiCursiveGut.ttf);
+}
+
 body{
 	background-image: url('../images/notebook_paper.jpg');
 	font-family: Text;
@@ -54,7 +59,7 @@ body{
 }
 
 #teclas .letra{
-
+	
 	cursor: pointer;
 	padding: 5px;
 	margin: 5px;

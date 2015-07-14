@@ -14,3 +14,54 @@ forcaApp.run(function($rootScope) {
     
 });
 
+var images = [];
+var count = 0;
+var begin = 10001;
+var end   = 10299;
+var canvas;
+var ctx;
+var drawInterval;
+
+$('document').ready(function(){
+    canvas = document.getElementById('myCanvas')
+    ctx = canvas.getContext('2d');
+    fill_scenes(images,begin,end);   
+})
+
+function init() {
+    drawInterval = setInterval(draw,30)
+    
+ }
+
+function draw(){
+    
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    ctx.drawImage(images[count], 0,0,canvas.width, canvas.height);
+    count++;
+    if(count == 299){
+        clearInterval(drawInterval);
+    }
+}
+
+  function fill_scenes(imageArr,count_img,end_image){
+
+    var scene = new Image();
+        scene.addEventListener("load", function() {
+            imageArr.push(scene);
+            if(count_img < end_image){
+                count_img++;
+                fill_scenes(imageArr,count_img,end_image)
+            }else{
+                debugger;
+                init();
+            }
+            
+        }, false);
+        scene.src = 'scenes/1/move/stick%20'+count_img+'.png';
+  }
+
+
+
+  function base_url(){
+    return window.location.protocol + '//' + window.location.hostname
+}
