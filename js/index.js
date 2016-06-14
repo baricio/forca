@@ -23,17 +23,18 @@ var ctx;
 var drawInterval;
 
 $('document').ready(function(){
-    canvas = document.getElementById('myCanvas')
+    /*canvas = document.getElementById('myCanvas')
     ctx = canvas.getContext('2d');
-    fill_scenes(images,begin,end);   
+    canvas.width = $('#background').width();
+    canvas.height = $('#background').height();
+    fill_scenes(images,begin,end); */ 
 })
 
-function init() {
-    drawInterval = setInterval(draw,30)
-    
+function init(canvas) {
+    drawInterval = setInterval(draw(canvas),30)
  }
 
-function draw(){
+function draw(canvas){
     
     ctx.clearRect(0,0,canvas.width, canvas.height);
     ctx.drawImage(images[count], 0,0,canvas.width, canvas.height);
@@ -43,7 +44,7 @@ function draw(){
     }
 }
 
-  function fill_scenes(imageArr,count_img,end_image){
+  function fill_scenes(canvas, imageArr,count_img,end_image){
 
     var scene = new Image();
         scene.addEventListener("load", function() {
@@ -53,7 +54,7 @@ function draw(){
                 fill_scenes(imageArr,count_img,end_image)
             }else{
                 debugger;
-                init();
+                init(canvas);
             }
             
         }, false);
