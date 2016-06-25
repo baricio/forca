@@ -1,0 +1,5 @@
+/xdk
+/*.xdk
+/*.xdke
+/intelxdk.config.additions.xml
+/xdk-publish-meta-data.json
